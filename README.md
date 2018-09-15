@@ -1,21 +1,30 @@
 # ethereumjs-wallet
 
-[![NPM Package](https://img.shields.io/npm/v/ethereumjs-wallet.svg?style=flat-square)](https://www.npmjs.org/package/ethereumjs-wallet)
-[![Build Status](https://travis-ci.org/ethereumjs/ethereumjs-wallet.svg?branch=master)](https://travis-ci.org/ethereumjs/ethereumjs-wallet)
-[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-wallet.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-wallet)
-[![Gitter](https://img.shields.io/gitter/room/ethereum/ethereumjs-lib.svg?style=flat-square)](https://gitter.im/ethereum/ethereumjs-lib) or #ethereumjs on freenode
+[![CircleCI][circle-image]][circle-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![dependency status][dep-image]][dep-url]
+[![NPM][npm-image]][npm-url]
+
+[circle-image]: https://circleci.com/gh/WanJS/wanchain-wns-network-map.svg?style=svg
+[circle-url]: https://circleci.com/gh/WanJS/wanchain-wns-network-map
+[dep-image]: https://david-dm.org/WanJS/wanchain-wns-network-map.svg
+[dep-url]: https://david-dm.org/WanJS/wanchain-wns-network-map
+[coveralls-image]: https://coveralls.io/repos/github/WanJS/wanchain-wns-network-map/badge.svg?branch=dev
+[coveralls-url]: https://coveralls.io/github/WanJS/wanchain-wns-network-map?branch=dev
+[npm-image]: http://img.shields.io/npm/v/wanchain-wns-network-map.svg
+[npm-url]: https://www.npmjs.org/package/wanchain-wns-network-map
 
 A lightweight wallet implementation. At the moment it supports key creation and conversion between various formats.
 
 It is complemented by the following packages:
-- [ethereumjs-tx](https://github.com/ethereumjs/ethereumjs-tx) to sign transactions
+- [ethereumjs-tx](https://github.com/wanchainjs/wanchainjs-tx) to sign transactions
 - [ethereumjs-icap](https://github.com/ethereumjs/ethereumjs-icap) to manipulate ICAP addresses
 - [store.js](https://github.com/marcuswestin/store.js) to use browser storage
 
 Motivations are:
 - be lightweight
 - work in a browser
-- use a single, maintained version of crypto library (and that should be in line with `ethereumjs-util` and `ethereumjs-tx`)
+- use a single, maintained version of crypto library (and that should be in line with `wanchainjs-util` and `wanchainjs-tx`)
 - support import/export between various wallet formats
 - support BIP32 HD keys
 
@@ -58,7 +67,7 @@ Note: `getPublicKey()` only returns uncompressed Ethereum-style public keys.
 
 Importing various third party wallets is possible through the `thirdparty` submodule:
 
-`var thirdparty = require('ethereumjs-wallet/thirdparty')`
+`var thirdparty = require('wanchainjs-wallet/thirdparty')`
 
 Constructors:
 
@@ -71,7 +80,7 @@ Constructors:
 
 To use BIP32 HD wallets, first include the `hdkey` submodule:
 
-`var hdkey = require('ethereumjs-wallet/hdkey')`
+`var hdkey = require('wanchainjs-wallet/hdkey')`
 
 Constructors:
 
@@ -93,7 +102,7 @@ Instance methods:
 The Wallet can be easily plugged into [provider-engine](https://github.com/metamask/provider-engine) to provide signing:
 
 ```js
-const WalletSubprovider = require('ethereumjs-wallet/provider-engine')
+const WalletSubprovider = require('wanchainjs-wallet/provider-engine')
 
 <engine>.addProvider(new WalletSubprovider(<wallet instance>))
 ```
@@ -133,4 +142,5 @@ The following settings are favoured by the Go Ethereum implementation and we def
 
 MIT License
 
-Copyright (C) 2016 Alex Beregszaszi
+Copyright (C) 2018 Tyrion70
+Original Copyright (C) 2016 Alex Beregszaszi

@@ -1,5 +1,5 @@
 var Wallet = require('./index.js')
-var ethUtil = require('ethereumjs-util')
+var ethUtil = require('wanchainjs-util')
 var crypto = require('crypto')
 var scryptsy = require('scrypt.js')
 var utf8 = require('utf8')

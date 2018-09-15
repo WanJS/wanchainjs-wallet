@@ -2,7 +2,7 @@ var assert = require('assert')
 var Buffer = require('safe-buffer').Buffer
 var Wallet = require('../')
 var Thirdparty = require('../thirdparty.js')
-var ethUtil = require('ethereumjs-util')
+var ethUtil = require('wanchainjs-util')
 
 var fixturePrivateKey = 'efca4cdd31923b50f4214af5d2ae10e7ac45a5019e9431cc195482d707485378'
 var fixturePrivateKeyStr = '0x' + fixturePrivateKey
@@ -57,7 +57,7 @@ describe('.getAddressString()', function () {
 
 describe('.getChecksumAddressString()', function () {
   it('should work', function () {
-    assert.equal(fixtureWallet.getChecksumAddressString(), '0xB14Ab53E38DA1C172f877DBC6d65e4a1B0474C3c')
+    assert.equal(fixtureWallet.getChecksumAddressString(), '0xb14aB53e38da1c172F877dbc6D65E4A1b0474c3C')
   })
 })
 

@@ -40,3 +40,6 @@ package-lock.json
 # are excluded
 /*.js
 /test
+
+.idea
+.nyc_output/

@@ -1,6 +1,6 @@
 {
-  "name": "ethereumjs-wallet",
-  "version": "0.6.2",
+  "name": "wanchainjs-wallet",
+  "version": "0.6.3",
   "description": "Utilities for handling Ethereum keys",
   "main": "index.js",
   "files": [
@@ -8,33 +8,33 @@
     "test/"
   ],
   "scripts": {
-    "coverage": "istanbul cover _mocha",
-    "coveralls": "npm run build:dist && npm run coverage && coveralls <coverage/lcov.info",
     "lint": "standard",
-    "prepublishOnly": "npm run lint && npm run test:build",
+    "prepublishOnly": "npm run lint && npm run test:unit",
     "test": "mocha ./src/test/*.js",
-    "test:build": "npm run build:dist && mocha ./test/*.js",
+    "test:unit": "npm run build:dist && mocha ./test/*.js",
+    "test:coverage": "nyc npm run test:unit && npm run test:coveralls-upload",
+    "test:coveralls-upload": "if [ $COVERALLS_REPO_TOKEN ]; then nyc report --reporter=text-lcov | coveralls; fi",
     "build:dist": "babel src/ -d ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethereumjs/ethereumjs-wallet.git"
+    "url": "https://github.com/WanJS/wanchainjs-wallet.git"
   },
   "keywords": [
-    "ethereum",
+    "wanchain",
     "wallets",
     "keys"
   ],
-  "author": "Alex Beregszaszi <alex@rtfs.hu>",
+  "author": "Tyrion70 <Tyrion70@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethereumjs/ethereumjs-wallet/issues"
+    "url": "https://github.com/WanJS/wanchainjs-wallet/issues"
   },
-  "homepage": "https://github.com/ethereumjs/ethereumjs-wallet",
+  "homepage": "https://github.com/WanJS/wanchainjs-wallet",
   "dependencies": {
     "aes-js": "^3.1.1",
     "bs58check": "^2.1.2",
-    "ethereumjs-util": "^5.2.0",
+    "wanchainjs-util": "^5.2.0",
     "hdkey": "^1.0.0",
     "safe-buffer": "^5.1.2",
     "scrypt.js": "^0.2.0",
@@ -47,6 +47,7 @@
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
     "standard": "^11.0.0"
   },
   "standard": {
